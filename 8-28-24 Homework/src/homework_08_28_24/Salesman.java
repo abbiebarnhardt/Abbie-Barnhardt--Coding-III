@@ -3,63 +3,56 @@ import java.util.Random;
 
 public class Salesman {
 
-	String name;
-	float sales;
+	private String name;
+	private float sales;
 	
 	public Salesman(String name, float sales) 
 	{
 		this.name = name;
 		this.sales = sales;
 	}
-
-	public static void main(String[] args) 
+	
+	public String getName()
 	{
-		String[] randomNames = {"Bill", "Joe", "Sally", "Greta", "Coco", "Steve", "George", "Susan", "Jill", "Karmen"};
-		Salesman [] allSales = new Salesman[10];
-		for (int i = 0; i < allSales.length; i++)
-		{
-			allSales[i] = new Salesman(randomNames[i], (float)((Math.random())* 17891.1));
-		}
-		
-		for(int i = 0; i < allSales.length; i++)
-		{
-			System.out.println("Name: " + allSales[i].name +  ", Sales: " + allSales[i].sales);
-		}
-		System.out.println();
-		
-		getTopFive(allSales);
+		return this.name;
+	}
+	
+	public float getSales()
+	{
+		return this.sales;
+	}
+	
+	public void setSales(float newSales)
+	{
+		this.sales = newSales;
+	}
+	
+	public void setName(String newName)
+	{
+		this.name = newName;
 	}
 	
 	public static Salesman[] getTopFive(Salesman[] allSales)
 	{
 		Salesman[] sortSales = allSales;
-		for(int i = 0; i < sortSales.length; i++)
+		Salesman[] top5 = new Salesman[5];
+		for(int i = 0; i < 5; i++)
 		{
 			for (int j = i+1; j < sortSales.length; j++)
 			{
-				float temp = (float)(0);
-				if (sortSales[j].sales > sortSales[i].sales)
+				float temp = 0;
+				if (sortSales[j].getSales() > sortSales[i].getSales())
 				{
-					temp = sortSales[i].sales;
-					sortSales[i].sales = sortSales[j].sales;
-					sortSales[j].sales = temp;
+					temp = sortSales[i].getSales();
+					sortSales[i].setSales(sortSales[j].getSales());
+					sortSales[j].setSales(temp);
 				}
 			}
-		}
-		
-		for(int i = 0; i < allSales.length; i++)
-		{
-			System.out.println("Name: " + sortSales[i].name +  ", Sales: " + sortSales[i].sales);
-		}
-		
-		System.out.println();
-		
-		Salesman[] top5 = new Salesman[5];
-		for (int i = 0; i <sortSales.length; i++)
-		{
+			
 			top5[i] = sortSales[i];
-			System.out.println("Name: " + top5[i].name +  ", Sales: " + top5[i].sales);
+			System.out.println("Name: " + top5[i].getName() +  ", Sales: " + top5[i].getSales());
 		}
+
 		return top5;
 	}
 }
