@@ -17,7 +17,7 @@ public class Main {
 		}
 		System.out.println();
 		
-		Salesman.getTopFive(allSales);		
+		Salesman [] topFiveSalesmen = Salesman.getTopFive(allSales);		
 	}
 
 }
