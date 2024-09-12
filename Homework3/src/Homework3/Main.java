@@ -1,11 +1,12 @@
 package Homework3;
 
-public class Main {
+public class Main 
+{
 
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		System.out.println(isAllUnique("stack"));
 		System.out.println(isAllUnique("unique"));
-
 	}
 	
 	public static Boolean isAllUnique(String string)
@@ -19,11 +20,8 @@ public class Main {
 				{
 						return false;
 				}
-				
 			}
 		}
-		
 		return true;
 	}
-
 }
