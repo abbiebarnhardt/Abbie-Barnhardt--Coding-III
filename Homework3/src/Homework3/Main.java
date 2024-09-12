@@ -2,7 +2,6 @@ package Homework3;
 
 public class Main 
 {
-
 	public static void main(String[] args) 
 	{
 		System.out.println(isAllUnique("stack"));
@@ -18,7 +17,7 @@ public class Main
 			{
 				if (temp.equals(string.substring(j, j+1)))
 				{
-						return false;
+					return false;
 				}
 			}
 		}
