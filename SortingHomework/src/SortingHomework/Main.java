@@ -5,7 +5,7 @@ public class Main {
 
 	public static void main(String[] args) 
 	{
-		int[] array = randomArray(100000,1,1000000);
+		int[] array = randomArray(10000,1,1000000);
 		int[] arrayOne = cloneArray(array);
 		int[] arrayTwo = cloneArray(array);
 		int[] arrayThree = cloneArray(array);
@@ -13,19 +13,19 @@ public class Main {
 		long startTime = System.currentTimeMillis();
 		selectionSort(arrayOne);
 		Long endTime = System.currentTimeMillis();
-		System.out.println("Selection Sort took " + (endTime - startTime) + " milliseconds to complete");
+		System.out.println("Sorting a random array of size " + arrayOne.length + " took selection Sort " + (endTime - startTime) + " milliseconds to complete");
 		System.out.println();
 		
 		startTime = System.currentTimeMillis();
 		bubbleSort(arrayTwo);
 		endTime = System.currentTimeMillis();
-		System.out.println("Bubble Sort took " + (endTime - startTime) + " milliseconds to complete");
+		System.out.println("Sorting a random array of size " + arrayTwo.length + " took bubble Sort " + (endTime - startTime) + " milliseconds to complete");
 		System.out.println();
 		
 		startTime = System.currentTimeMillis();
 		insertionSort(arrayThree);
 		endTime = System.currentTimeMillis();
-		System.out.println("Insertion Sort took " + (endTime - startTime) + " milliseconds to complete");
+		System.out.println("Sorting a random array of size " + arrayThree.length + " took insertion Sort  " + (endTime - startTime) + " milliseconds to complete");
 		System.out.println();
 	}
 	
