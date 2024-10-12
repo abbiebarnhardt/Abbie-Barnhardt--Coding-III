@@ -5,28 +5,34 @@ public class Main {
 
 	public static void main(String[] args) 
 	{
-		int[] array = randomArray(10,1,1000000);
+		int[] array = randomArray(100000,1,100000000);
 		int[] arrayOne = cloneArray(array);
 		int[] arrayTwo = cloneArray(array);
 		int[] arrayThree = cloneArray(array);
+		int[] arrayFour = cloneArray(array);
 		
 		long startTime = System.currentTimeMillis();
 		selectionSort(arrayOne);
 		Long endTime = System.currentTimeMillis();
 		System.out.println("Sorting a random array of size " + arrayOne.length + " took selection sort " + (endTime - startTime) + " milliseconds to complete");
-		System.out.println();
 		
 		startTime = System.currentTimeMillis();
 		bubbleSort(arrayTwo);
 		endTime = System.currentTimeMillis();
 		System.out.println("Sorting a random array of size " + arrayTwo.length + " took bubble sort " + (endTime - startTime) + " milliseconds to complete");
-		System.out.println();
 		
 		startTime = System.currentTimeMillis();
 		insertionSort(arrayThree);
 		endTime = System.currentTimeMillis();
 		System.out.println("Sorting a random array of size " + arrayThree.length + " took insertion sort  " + (endTime - startTime) + " milliseconds to complete");
-		System.out.println();
+	}
+	
+	public static void printArray(int [] arr)
+	{
+	   for(int i = 0; i < arr.length; i++)
+	   {
+		   System.out.print(arr[i] + ", ");
+	   }
 	}
 	
 	public static int[] randomArray(int size, int min, int max)
@@ -47,12 +53,7 @@ public class Main {
 				shuffledArray[i] = arr[i];
 			}
 
-			for (int i =0; i < size; i++) 
-			{
-				System.out.print(shuffledArray[i] + ", ");
-			}
-			
-			System.out.println();
+			//printArray(shuffledArray);
 			System.out.println("Generate Array Done");
 			System.out.println();
 			return shuffledArray;
@@ -85,6 +86,8 @@ public class Main {
 		{
 			clone[i] = arr[i];
 		}
+		
+		System.out.println("Clone Array Done");
 		return clone;
 	}
 	
@@ -103,11 +106,7 @@ public class Main {
 			}
 		}
 	
-		/*for(int i = 0; i < arr.length; i++)
-		{
-			System.out.print(arr[i] + ", ");
-		}*/
-		
+		//printArray(arr);
 		System.out.println();
 		return arr;
 	}
@@ -127,11 +126,7 @@ public class Main {
 			}
 		}
 		
-		/*for(int i = 0; i < arr.length; i++)
-		{
-			System.out.print(arr[i] + ", ");
-		}*/
-		
+		//printArray(arr);
 		System.out.println();
 		return arr;
 	}
@@ -150,12 +145,9 @@ public class Main {
 			}
 		}
 		
-		/*for(int i = 0; i < arr.length; i++)
-		{
-			System.out.print(arr[i] + ", ");
-
-		}*/
+		//printArray(arr);
 		System.out.println();
 		return arr;
 	}
+
 }
