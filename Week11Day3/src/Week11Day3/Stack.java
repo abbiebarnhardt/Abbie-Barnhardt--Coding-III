@@ -12,4 +12,14 @@ public abstract class Stack
 	
 	public abstract boolean IsEmpty();
 	
+	public abstract void PrintStack();
+	
+	public abstract boolean InsertAfter(Node preNode, Node newNode);
+	
+	public abstract void SelectionSort(boolean asceding);
+	
+	public abstract void BubbleSort(boolean ascending);
+	
+	public abstract boolean isExpValid(String expression);
+	
 }
